@@ -1,4 +1,5 @@
 ### Aarhus Artist Underground
+------
 *Exam Project: Fall 2022 / Hidden places*
 #### By Deen Rotaru
 
@@ -8,6 +9,7 @@
     Each location gets a subpage themed around the subject(only keeping the structure of the main page) and 1-3 useless interactions the users can do.
 
 (*an interaction that does not serve any other purpose besides a small entertainment value for the users)
+------
 
 ### Tabs:
 + Main page / Welcome page
