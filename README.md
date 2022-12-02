@@ -20,8 +20,8 @@
 ### Responsiveness:
 + Desktop ✔
 + Mobile (Samsung S10+) ✔
-+ Tablet X
-+ Other mobiles X
++ Tablet ❌
++ Other mobiles ❌
 
 ### Code languages used:
 + HTML
