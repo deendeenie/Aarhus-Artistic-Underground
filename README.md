@@ -17,9 +17,9 @@
 
 ### Tabs:
 + Main page / Welcome page
++ Explore
++ Events
 + About Us
-+ Local Artists
-+ Discover
 + Suggest
 + (Mobile) Menu nav
 
