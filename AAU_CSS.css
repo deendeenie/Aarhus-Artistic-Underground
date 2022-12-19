@@ -1,0 +1,2361 @@
+/*
+------- • ✦ • -------
+
+Aahrus Artist Underground
+Exam Project: Fall 2022 / Hidden places
+    By Deen Rotaru
+
+------- • ✦ • -------
+*/
+
+/*
+    Basics
+*/
+
+/* Loading the fonts */
+@font-face{
+    font-family: 'Josefin Sans';
+    src: url(Content/JosefinSans.ttf)  format("truetype");
+}
+
+@font-face{
+    font-family: 'Dubiel';
+    src: url(Content/DubielItalic.ttf)  format("truetype");
+}
+
+:root{
+/* Color variables */
+    --black: #131122;
+    --white: #D1D0DE;
+    --blue: #23488F;
+    --yellow: #FFE765;
+    --transparent: rgba(0, 0, 0, 0);
+    --hover: #9998A6;
+
+    /* Hotel Royal */
+    --hrblack: #5F2C2A;
+    --hrwhite: #F0E9D9;
+    --hrblue: #9D8691;
+    --hryellow: #F1CA72;
+
+    /* UnderMasken */
+    --umblack: #1C1E22;
+    --umwhite: #DED0C2;
+    --umblue: #46666B;
+    --umyellow: #DCB13A;
+
+    /* Seagull Kiss */
+    --skblack: #36203A;
+    --skwhite: #FCF7EB;
+    --skblue: #5EBFC8;
+    --skyellow: #EFA73A;
+
+/* Text defaults */
+    font-family: "Josefin Sans", sans-serif;
+    color:  var(--white);
+    font-size: 1.5em;
+}
+
+/* Selection colors */
+::selection {color: var(--black); background: var(--yellow);}
+
+/* Scrollbar */
+::-webkit-scrollbar {width: 20px; background-color: var(--black);}
+::-webkit-scrollbar-track {border-radius: 10px;}
+::-webkit-scrollbar-thumb {background-color: var(--white); border-radius: 50px;}
+
+/* Default link format */
+a {
+    color: var(--yellow);
+    font-weight: bold;
+    text-decoration: none;
+    text-shadow: 0px 0px 5px var(--yellow);
+
+    transition: color 0.3s, text-shadow 0.3s;
+}
+
+a:hover{
+    color: var(--blue);
+    text-shadow: 0px 0px 5px var(--blue);
+
+    transition: color 0.3s, text-shadow 0.3s;
+}
+
+/* Headlines text */
+h1{
+    font-family: "Dubiel", serif;
+    font-style: italic;
+    font-size: 2em;
+    color: var(--yellow);
+    text-shadow: 0px 0px 5px var(--yellow);
+    margin-bottom: -10px;
+}
+
+/* Smaller headline text */
+h2{
+    font-family: "Dubiel", serif;
+    font-style: italic;
+    font-size: 1.4em;
+    color: var(--black);
+    margin-bottom: -10px;
+}
+
+/* Underline for headlines */
+.subline{
+    border: 3px solid var(--white);
+    border-width: 0px 0px 3px 0px;
+    width: 900px;
+}
+
+/* Description under headlines */
+.under_desc{
+    margin-top: -10px;
+}
+
+/* Button */
+.glowing_btn{
+    background-color: var(--transparent);
+    border-color: var(--yellow);
+    border-width: 3px;
+    border-radius: 50px;
+    padding: 10px 20px 10px 20px;
+
+    color: var(--yellow);
+    font-size: 1em;
+    text-transform: uppercase;
+
+    text-shadow: 0px 0px 5px var(--yellow);
+    box-shadow: 0px 0px 5px var(--yellow);
+
+    transition: border-color 0.3s, color 0.3s, text-shadow 0.3s, box-shadow 0.3s;
+}
+
+.glowing_btn:hover{
+    border-color: var(--blue);
+    color: var(--blue);
+
+    text-shadow: 0px 0px 5px var(--blue);
+    box-shadow: 0px 0px 5px var(--blue);
+
+    transition: border-color 0.3s, color 0.3s, text-shadow 0.3s, box-shadow 0.3s;
+}
+
+/* ------- • ✦ • ------- */
+
+body{margin: 0; top: 0; left: 0; background-color: var(--black);
+    animation-name: pagetransitions; animation-duration: 0.5s;}
+
+/* Transition between pages */
+@keyframes pagetransitions {
+    0% {filter: blur(2px) brightness(0.5);}
+    100% {filter: blur(0px) brightness(1);}
+}
+
+/* ------- • ✦ • ------- */
+
+/*
+
+    Desktop version
+
+*/
+
+@media only screen and (min-width: 600px) {
+
+/* ------- • ✦ • ------- */
+
+/*
+    Navigation bar
+*/
+#NavBar {
+    display: block;
+    overflow: hidden;
+    border: none;
+}
+
+#NavDesktop{display: block;}
+#NavMobile{display: none;}
+
+.logo{
+    height: 50px;
+    margin: -10px 20px 0px 20px;
+}
+
+.lang_switch{
+    width: 30px;
+}
+
+/* .navbar class */
+.navbar ul{
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+.navbar li{
+    display: inline;
+	float: left;
+    padding: 20px 10px 10px 10px;
+}
+
+.navbar a{
+    color: var(--white);
+    text-shadow: 0px 0px 0px;
+    text-decoration: none;
+    transition: color 0.3s, text-shadow 0.3s;
+}
+
+.navbar a:hover{
+    color: var(--yellow);
+    text-shadow: 0px 0px 5px var(--yellow);
+    transition: color 0.3s, text-shadow 0.3s;
+}
+
+/* Navigation bar sides */
+.navleft{
+    position: relative;
+    float: left;
+}
+
+.navright{
+    position: relative;
+    float: right;
+    margin-right: 20px;
+}
+
+/* ------- • ✦ • ------- */
+
+/*
+    Main page
+*/
+#mainPageEN{overflow: hidden;} #mainPageDA{overflow: hidden;}
+
+#mainBGdesktop{display: block;}
+#mainBGmobile{display: none;}
+
+.main_page{
+    height: max-content;
+    width: max-content;
+    overflow: hidden;
+}
+
+.main_card_info{
+    width: 100%;
+    height: auto;
+}
+
+/* Content */
+.main_logo{
+    width: 180px;
+    height: auto;
+}
+
+.layer1{
+    position: absolute;
+    top: 150px;
+    right: 100px;
+    z-index: 2;
+}
+
+/* Main page background */
+.main_card{
+    width: 100%;
+    height: auto;
+    position: absolute;
+    z-index: 1;
+}
+
+.bg_image{
+    width: 100%;
+    height: auto;
+    position: absolute;
+    z-index: -1;
+}
+
+/* ------- • ✦ • ------- */
+
+/*
+    Language Switch
+*/
+
+.lang_popup{
+    position: absolute;
+    width: 200px;
+    z-index: 3;
+    right: 50px;
+}
+.lang_popup_none{display: none;}
+
+.lang_popup img{
+    display: inline;
+    width: 40px;
+    border-radius: 30px;
+    margin-right: 5px;
+}
+
+.lang_popup p{
+    display: inline;
+    font-size: 1.5em;
+}
+
+.lang_en{
+    display: block;
+    color: var(--black);
+    background-color: var(--white);
+    border-radius: 10px 10px 0px 0px;
+
+    height: 50px;
+    width: 180px;
+    padding: 10px 30px 10px 20px;
+    
+    transition: background-color 0.3s;
+}
+.lang_en:hover{background-color: var(--hover); transition: background-color 0.3s;}
+
+.lang_da{
+    display: block;
+    color: var(--black);
+    background-color: var(--white);
+    border-radius: 0px 0px 10px 10px;
+    
+    height: 50px;
+    width: 180px;
+    padding: 10px 30px 10px 20px;
+
+    transition: background-color 0.3s;
+}
+.lang_da:hover{background-color: var(--hover); transition: background-color 0.3s;}
+
+/* ------- • ✦ • ------- */
+
+/* 
+    Explore subpage
+*/
+
+/* Containers */
+.explore_container{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+
+    align-items: center;
+    justify-content: center;
+
+    margin: auto;
+    width: 95%;
+    padding-bottom: 30px;
+}
+
+.explore_cards_margins{
+    display: inline-block;
+    width: 300px;
+    height: 520px;
+    margin: 0px 50px 30px 50px;
+    flex-basis: auto;
+}
+
+/* Media Formatting */
+.explore_card p{
+    font-size: 0.8em;
+    text-align: center;
+}
+
+.explore_card img{
+    height: 161px;
+    width: 340px;
+
+    margin-top: 20px;
+    margin-left: -90px;
+    margin-right: -90px;
+}
+
+/* Subpage Cards */
+.explore_card{
+    position: absolute;
+    left: 15px;
+
+    background-color: var(--white);
+    border-radius: 30px;
+
+    height: 450px;
+    width: 300px;
+    padding: 5px 20px 50px 20px;
+
+    text-align: center;
+}
+.explore_card.hotelroyal{color: var(--hrblack); background-color: var(--hrwhite);}
+.explore_card.undermasken{color: var(--umblack); background-color: var(--umwhite);}
+.explore_card.seagullkiss{color: var(--skblack); background-color: var(--skwhite);}
+
+/* Subpage Cards Border */
+.explore_border{
+    position: absolute;
+
+    border: 5px solid var(--white);
+    border-radius: 30px;
+    
+    height: 500px;
+    width: 250px;
+    padding: 10px 60px 15px 60px;
+
+    box-shadow: 0px 0px 5px var(--white);
+}
+.explore_border.hotelroyal{border: 5px solid var(--hrblue);box-shadow: 0px 0px 5px var(--hrblue);}
+.explore_border.undermasken{border: 5px solid var(--umyellow);box-shadow: 0px 0px 5px var(--umyellow);}
+.explore_border.seagullkiss{border: 5px solid var(--skblue);box-shadow: 0px 0px 5px var(--skblue);}
+
+/* Button to subpage */
+.explore_card button{
+    background-color: var(--black);
+    color: var(--white);
+
+    height: 50px;
+    width: 150px;
+    border-radius: 30px;
+    border: 0;
+    text-transform: uppercase;
+
+    transition: background-color 0.5s, color 0.5s;
+}
+.explore_card.hotelroyal button{background-color: var(--hrblue); color: var(--hrwhite);}
+.explore_card.undermasken button{background-color: var(--umyellow); color: var(--umblue);}
+.explore_card.seagullkiss button{background-color: var(--skblack); color: var(--skblue);}
+
+/* Button to subpage - Hover */
+.explore_card button:hover{
+    background-color: var(--blue);
+    color: var(--white);
+    transition: background-color 0.5s, color 0.5s;
+}
+.explore_card.hotelroyal button:hover{background-color: var(--hrblack); color: var(--hrblue);}
+.explore_card.undermasken button:hover{background-color: var(--umblack); color: var(--umyellow);}
+.explore_card.seagullkiss button:hover{background-color: var(--skblue); color: var(--skwhite);}
+
+/* Card linking to suggestions page*/
+.explore_card_suggest{
+    position: absolute;
+    left: 15px;
+
+    background-color: var(--transparent);
+    border-radius: 30px;
+
+    height: 450px;
+    width: 300px;
+    padding: 5px 20px 50px 20px;
+
+    text-align: center;
+}
+
+.explore_border_suggest{
+    position: absolute;
+
+    border: 5px solid var(--yellow);
+    border-radius: 30px;
+    
+    height: 500px;
+    width: 250px;
+    padding: 10px 60px 15px 60px;
+
+    box-shadow: 0px 0px 5px var(--yellow);
+}
+
+.explore_card_suggest h1{
+    font-size: 1.5em;
+    margin-top: 80px;
+}
+
+.explore_card_suggest p{
+    color: var(--white);
+    font-size: 1.8em;
+    text-align: center;
+    margin-top: 20px;
+}
+
+/* ------- • ✦ • ------- */
+
+/*
+    Events subpage
+*/
+
+.events_holder{
+    margin: auto;
+    width: 80%;
+
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.event{
+    margin: 10px 0px 10px 0px;
+}
+
+/* Event Cards */
+
+.events_card{
+    position: relative;
+    left: -40px;
+    
+    background-color: var(--white);
+    border-radius: 30px;
+
+    height: 200px;
+    width: 1000px;
+
+    padding: 40px 40px 40px 40px;
+    margin: -30px 0px 0px 0px;
+}
+
+.events_border{
+    position: relative;
+    left: 20px;
+    
+    border: 5px solid var(--yellow);
+    border-radius: 30px;
+    
+    height: 220px;
+    width: 1000px;
+    padding: 50px 60px 50px 60px;
+
+    box-shadow: 0px 0px 5px var(--yellow);
+}
+
+/* Event Card Content*/
+.events_text{
+    display: inline-block;
+    width: 600px;
+    padding-left: 20px;
+    margin-top: -40px;
+}
+
+.events_card h2{
+    color: var(--black);
+    font-size: 1em;
+    font-family: "Josefin Sans";
+    font-style: normal;
+    width: 500px;
+}
+
+.events_subline{
+    border: 3px solid var(--black);
+    border-width: 0px 0px 3px 0px;
+    width: 450px;
+}
+
+.events_card p{
+    color: var(--black);
+    font-size: 0.8em;
+    width: 600px;
+    padding-left: 20px;
+}
+
+/* Image + Link */
+
+/*
+#ImageNlink{
+    display: inline-block;
+    width: 100px;
+    height: 200px;
+}
+*/
+
+.events_card img{
+    float: left;
+
+    height: 250px;
+    width: 250px;
+    margin-top: -25px;
+
+    border-radius: 20px;
+}
+
+/* Date and address */
+.event_date_address{
+    text-align: right;
+    float: right;
+}
+
+/* ------- • ✦ • ------- */
+
+/*
+    About Us subpage
+*/
+
+.about_paragraph{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+
+    align-items: center;
+    justify-content: center;
+
+    margin: auto;
+    width: 95%;
+}
+
+.about_paragraph img{
+    width: 400px;
+    float: right;
+    padding-left: 50px;
+}
+
+.secondimage{
+    width: 400px;
+    float: left;
+    padding-right: 50px;
+}
+
+.about_paragraph p{
+    width: 500px;
+    margin: 20px 50px 20px 50px;
+}
+
+.about_paragraph h1{
+    font-size: 1.5em;
+    width: 600px;
+}
+
+/* Linking to suggest page*/
+.about_to_suggest{
+    margin: auto;
+    width: 50%;
+    
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+
+    padding-bottom: 70px;
+}
+
+.about_to_suggest p{
+    width: 400px;
+    text-align: center;
+    margin: auto;
+    padding: 20px 0px 20px 0px;
+}
+
+/* ------- • ✦ • ------- */
+
+/*
+    Suggest subpage
+*/
+
+.form_holder{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+
+    align-items: center;
+    justify-content: center;
+
+    margin: auto;
+    width: 75%;
+    padding-bottom: 30px;
+}
+
+.form_holder button{
+    margin: 10px 0px 10px 0px;
+}
+
+input{
+    display: flex;
+    flex-direction: column;
+
+    color: var(--hover);
+    background-color: var(--white);
+    
+    font-style: italic;
+    font-size: 1em;
+
+    height: 60px;
+    width: 400px;
+    padding: 5px 10px 5px 10px;
+    margin: -10px 20px 0px 20px;
+
+    border-radius: 20px;
+    border: 5px solid var(--transparent);
+    outline: none;
+
+    transition: color 0.3s, border 0.3s, font-style 0.3s, box-shadow 0.3s;
+}
+input:focus{color: var(--black); font-style: normal; border: 5px solid var(--yellow); box-shadow: 0px 0px 5px var(--yellow);
+            transition: color 0.3s, border 0.3s, font-style 0.3s, box-shadow 0.3s;}
+
+.inputBig textarea{
+    height: 260px;
+    width: 400px;
+    resize: none;
+
+    padding: 5px 10px 5px 10px;
+    margin: 0px 20px 5px 20px;
+
+
+    text-align: left;
+    font-family:  "Josefin Sans", sans-serif;
+    color: var(--hover);
+    background-color: var(--white);
+    
+    font-style: italic;
+    font-weight: bold;
+    font-size: 1em;
+
+    border-radius: 20px;
+    border: 5px solid var(--transparent);
+    outline: none;
+
+    transition: color 0.3s, border 0.3s, font-style 0.3s, box-shadow 0.3s;
+}
+textarea:focus{color: var(--black); font-style: normal; border: 5px solid var(--yellow); box-shadow: 0px 0px 5px var(--yellow);
+    transition: color 0.3s, border 0.3s, font-style 0.3s, box-shadow 0.3s;}
+
+/*
+    Confirmation or Error after Suggestion Submittion
+*/
+.container_postsuggest{
+    width: 68%;
+    margin: auto;
+    padding-top: 19px;
+}
+.container_postsuggest.error{
+    width: 71%;
+    margin: auto;
+    padding-top: 19px;
+}
+
+.text_postsuggest{
+    height: 450px;
+    padding-top: 70px;
+}
+
+.text_postsuggest p{
+    font-size: 2em;
+    width: 500px;
+}
+.text_postsuggest.error p{
+    font-size: 2em;
+    width: 600px;
+}
+
+/* ------- • ✦ • ------- */
+
+/*
+    404 page
+*/
+#page404{overflow: hidden;}
+
+.container_404{
+    width: 70%;
+    margin: auto;
+    padding-top: 70px;
+}
+
+.image404{
+    float: right;
+    height: 450px;
+    width: auto;
+    padding-left: 50px;
+}
+
+.text_404{
+    height: 450px;
+    padding-top: 70px;
+}
+
+.text_404 p{
+    font-size: 2em;
+    width: 450px;
+}
+
+/*
+    Empty state
+*/
+#pageEmptystate{overflow: hidden;}
+
+.container_emptystate{
+    width: 68%;
+    margin: auto;
+    padding-top: 70px;
+}
+
+.image_emptystate{
+    float: right;
+    height: 450px;
+    width: auto;
+    padding-left: 50px;
+}
+
+.text_emptystate{
+    height: 450px;
+    padding-top: 70px;
+}
+
+.text_emptystate p{
+    font-size: 2em;
+    width: 450px;
+}
+
+/* ------- • ✦ • ------- */
+
+/*
+
+    ✦ S u b p a g e s ✦
+
+*/
+
+/*
+    Subpage 1 - Hotel Royal
+*/
+
+/* Subpage background color */ #subpage1HR{background-color: var(--hrblack);}
+/* Navigation bar background color*/ #subpage1HRnav{background-color: var(--hrblack);}
+/* Navigation bar basics*/ #NavBarHR {display: block;overflow: hidden;border: none;}
+
+/* Selection colors */ #subpage1HR::selection {color: var(--hrblack); background: var(--hryellow);}
+
+/* Scrollbar track */ #subpage1HR::-webkit-scrollbar {width: 20px; background-color: var(--hrblack);}
+/* Scrollbar thumb */#subpage1HR::-webkit-scrollbar-thumb {background-color: var(--hryellow); border-radius: 50px;}
+
+/* Navigation bar links */ .HRnavbar a{color: var(--hrwhite); text-shadow: 0px 0px 0px; text-decoration: none; transition: color 0.3s, text-shadow 0.3s;}
+/* Navigation bar links - Hover */ .HRnavbar a:hover{color: var(--hryellow); text-shadow: 0px 0px 5px var(--hryellow); transition: color 0.3s, text-shadow 0.3s;}
+
+/* Page content */
+.hotelroyal_cover{
+    background-image: url('/Content/Subpages/Hotel_Royal/Modified/hotel_royal_subpage_cover_blur.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+
+    max-width: 100%;
+    height: 200px;
+    padding-top: 50px;
+}
+
+/* Cover headline */
+.hotelroyalsubpage h1{
+    font-family: "Dubiel", serif;
+    font-size: 2em;
+    text-transform: uppercase;
+    color: var(--hryellow);
+    text-shadow: 0px 0px 0px;
+    margin-bottom: -10px;
+}
+
+/* Line under cover headline */
+.rh_cover_subline{
+    border: 3px solid var(--hryellow);
+    border-width: 0px 0px 3px 0px;
+    width: 900px;
+}
+
+/* Sections headline */
+.hotelroyalsubpage h2{
+    font-family: "Dubiel", serif;
+    font-size: 1.5em;
+    text-transform: uppercase;
+    color: var(--hryellow);
+    margin-bottom: -10px;
+}
+
+/* Line under normal headlines */
+.rh_subline{
+    border: 3px solid var(--hryellow);
+    border-width: 0px 0px 3px 0px;
+    width: 300px;
+}
+
+/* Basic text */
+.hotelroyalsubpage p{
+    color: var(--hrwhite);
+}
+
+.hrsubpage_paragraph{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+
+    align-items: center;
+    justify-content: center;
+
+    margin: auto;
+    width: 100%;
+
+    padding-top: 30px;
+    padding-bottom: 30px;
+}
+
+.hrsubpage_paragraph img{
+    width: 250px;
+    float: right;
+    padding: 10px 10px 10px 10px;
+
+    border: 5px solid var(--hryellow);
+    border-radius: 30px;
+}
+
+.hrsubpage_map{
+    float: left;
+    padding: 10px 10px 10px 10px;
+    margin-right: 30px;
+
+    border: 5px solid var(--hryellow);
+    border-radius: 30px;
+}
+
+.hrsubpage_paragraph p{width: 500px; margin: 20px;}
+.hrsubpage_paragraph h1{width: 300px;}
+
+#HRtextP4 p{width: 400px; margin: 10px;}
+
+/* Gallery */
+.hrsubpage_gallery{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+
+    align-items: center;
+    justify-content: center;
+
+    margin: auto;
+    width: 100%;
+
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+#HRheadlineGallery{
+    width: 90%;
+}
+
+.hrsubpage_gallery img{
+    width: 300px;
+    padding: 10px 10px 10px 10px;
+    margin: 10px 10px 10px 10px;
+
+    border: 5px solid var(--hryellow);
+    border-radius: 30px;
+
+    filter: brightness(1);
+    transition: filter 0.3s;
+}
+.hrsubpage_gallery img:hover{filter: brightness(0.4); transition: filter 0.3s;}
+
+/* ------- • ✦ • ------- */
+
+/*
+    Subpage 2 - UnderMasken
+*/
+
+/* Subpage background color */ #subpage2UM{background-color: var(--umblack);}
+/* Navigation bar background color*/ #subpage2UMnav{background-color: var(--umblack);}
+/* Navigation bar basics*/ #NavBarUM {display: block; overflow: hidden; border: none;}
+
+/* Selection colors */ #subpage2UM::selection {color: var(--umblack); background: var(--umyellow);}
+
+/* Scrollbar track */ #subpage2UM::-webkit-scrollbar {width: 20px; background-color: var(--umblack);}
+/* Scrollbar thumb */#subpage2UM::-webkit-scrollbar-thumb {background-color: var(--umyellow); border-radius: 50px;}
+
+/* Navigation bar links */ .umnavbar a{color: var(--umwhite); text-shadow: 0px 0px 0px; text-decoration: none; transition: color 0.3s, text-shadow 0.3s;}
+/* Navigation bar links - Hover */ .umavbar a:hover{color: var(--umyellow); text-shadow: 0px 0px 5px var(--umyellow); transition: color 0.3s, text-shadow 0.3s;}
+
+/* Page content */
+.undermasken_cover{
+    background-image: url('/Content/Subpages/UnderMasken/Modified/undermasken_subpage_cover_blur.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+
+    max-width: 100%;
+    height: 200px;
+    padding-top: 50px;
+}
+
+/* Cover headline */
+.undermaskensubpage h1{
+    font-family: "Dubiel", serif;
+    font-size: 2em;
+    text-transform: uppercase;
+    color: var(--umyellow);
+    text-shadow: 0px 0px 0px;
+    margin-bottom: -10px;
+}
+
+/* Line under cover headline */
+.um_cover_subline{
+    border: 3px solid var(--umyellow);
+    border-width: 0px 0px 3px 0px;
+    width: 900px;
+}
+
+/* Sections headline */
+.undermaskensubpage h2{
+    font-family: "Dubiel", serif;
+    font-size: 1.5em;
+    text-transform: uppercase;
+    color: var(--umyellow);
+    margin-bottom: -10px;
+}
+
+/* Line under normal headlines */
+.um_subline{
+    border: 3px solid var(--umyellow);
+    border-width: 0px 0px 3px 0px;
+    width: 300px;
+}
+
+/* Basic text */
+.undermaskensubpage p{
+    color: var(--umwhite);
+}
+
+.umsubpage_paragraph{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+
+    align-items: center;
+    justify-content: center;
+
+    margin: auto;
+    width: 100%;
+
+    padding-top: 30px;
+    padding-bottom: 30px;
+}
+
+.umsubpage_paragraph img{
+    width: 250px;
+    float: right;
+    padding: 10px 10px 10px 10px;
+
+    border: 5px solid var(--umyellow);
+    border-radius: 30px;
+}
+
+.umsubpage_map{
+    float: left;
+    padding: 10px 10px 10px 10px;
+    margin-right: 30px;
+
+    border: 5px solid var(--umyellow);
+    border-radius: 30px;
+}
+
+.umsubpage_paragraph p{width: 500px; margin: 20px;}
+.umsubpage_paragraph h1{width: 300px;}
+
+#UMtextP4 p{width: 400px; margin: 10px;}
+
+/* Gallery */
+.umsubpage_gallery{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+
+    align-items: center;
+    justify-content: center;
+
+    margin: auto;
+    width: 100%;
+
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+#UMheadlineGallery{
+    width: 90%;
+}
+
+.umsubpage_gallery img{
+    width: 300px;
+    padding: 10px 10px 10px 10px;
+    margin: 10px 10px 10px 10px;
+
+    border: 5px solid var(--umyellow);
+    border-radius: 30px;
+
+    filter: brightness(1);
+    transition: filter 0.3s;
+}
+.umsubpage_gallery img:hover{filter: brightness(0.4); transition: filter 0.3s;}
+
+/* ------- • ✦ • ------- */
+
+/*
+    Subpage 3 - Seagull Kiss
+*/
+
+/* Subpage background color */ #subpage3SK{background-color: var(--skblue);}
+/* Navigation bar background color*/ #subpage3SKnav{background-color: var(--skblack);}
+/* Navigation bar basics*/ #NavBarSK {display: block; overflow: hidden; border: none;}
+
+/* Selection colors */ #subpage3SK::selection {color: var(--skblue); background: var(--skblack);}
+
+/* Scrollbar track */ #subpage3SK::-webkit-scrollbar {width: 20px; background-color: var(--skblue);}
+/* Scrollbar thskb */#subpage3SK::-webkit-scrollbar-thumb {background-color: var(--skblack); border-radius: 50px;}
+
+/* Navigation bar links */ .sknavbar a{color: var(--skblue); text-shadow: 0px 0px 0px; text-decoration: none; transition: color 0.3s, text-shadow 0.3s;}
+/* Navigation bar links - Hover */ .skavbar a:hover{color: var(--skyellow); text-shadow: 0px 0px 5px var(--skyellow); transition: color 0.3s, text-shadow 0.3s;}
+
+/* Page content */
+.seagullkiss_cover{
+    background-image: url('/Content/Subpages/Seagull_Kiss/Modified/seagull_kiss_subpagecover_blur.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+
+    max-width: 100%;
+    height: 200px;
+    padding-top: 50px;
+}
+
+/* Cover headline */
+.seagullkisssubpage h1{
+    font-family: "Dubiel", serif;
+    font-size: 2em;
+    text-transform: uppercase;
+    color: var(--skblack);
+    text-shadow: 0px 0px 0px;
+    margin-bottom: -10px;
+}
+
+/* Line under cover headline */
+.sk_cover_subline{
+    border: 3px solid var(--skblack);
+    border-width: 0px 0px 3px 0px;
+    width: 900px;
+}
+
+/* Sections headline */
+.seagullkisssubpage h2{
+    font-family: "Dubiel", serif;
+    font-size: 1.5em;
+    text-transform: uppercase;
+    color: var(--skblack);
+    margin-bottom: -10px;
+}
+
+/* Line under normal headlines */
+.sk_subline{
+    border: 3px solid var(--skblack);
+    border-width: 0px 0px 3px 0px;
+    width: 300px;
+}
+
+/* Basic text */
+.seagullkisssubpage p{
+    color: var(--skblack);
+}
+
+.sksubpage_paragraph{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+
+    align-items: center;
+    justify-content: center;
+
+    margin: auto;
+    width: 100%;
+
+    padding-top: 30px;
+    padding-bottom: 30px;
+}
+
+.sksubpage_paragraph img{
+    width: 250px;
+    float: right;
+    padding: 10px 10px 10px 10px;
+
+    border: 5px solid var(--skblack);
+    border-radius: 30px;
+}
+
+.sksubpage_map{
+    float: left;
+    padding: 10px 10px 10px 10px;
+    margin-right: 30px;
+
+    border: 5px solid var(--skblack);
+    border-radius: 30px;
+}
+
+.sksubpage_paragraph p{width: 500px; margin: 20px;}
+.sksubpage_paragraph h1{width: 300px;}
+
+#SKtextP4 p{width: 400px; margin: 10px;}
+
+/* Gallery */
+.sksubpage_gallery{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+
+    align-items: center;
+    justify-content: center;
+
+    margin: auto;
+    width: 100%;
+
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+#SKheadlineGallery{
+    width: 90%;
+}
+
+.sksubpage_gallery img{
+    width: 300px;
+    padding: 10px 10px 10px 10px;
+    margin: 10px 10px 10px 10px;
+
+    border: 5px solid var(--skblack);
+    border-radius: 30px;
+
+    filter: brightness(1);
+    transition: filter 0.3s;
+}
+.sksubpage_gallery img:hover{filter: brightness(0.4); transition: filter 0.3s;}
+
+}
+/* ------- • ✦ • ------- */
+
+/*
+
+    Mobile version
+
+*/
+
+@media only screen and (max-width: 600px){
+
+/* ------- • ✦ • ------- */
+
+/* Headlines text */
+h1{font-size: 1em; text-shadow: 0px 0px 3px var(--yellow)}
+
+/* Smaller headline text */
+h2{font-size: 0.8em;}
+
+/* Underline for headlines */
+.subline{width: 300px;}
+
+/* Button */
+.glowing_btn{font-size: 0.8em; text-shadow: 0px 0px 3px var(--yellow); box-shadow: 0px 0px 3px var(--yellow);
+            transition: border-color 0.3s, text-shadow 0.3s, box-shadow 0.3s;
+}
+.glowing_btn:hover{text-shadow: 0px 0px 5px var(--blue); box-shadow: 0px 0px 5px var(--blue);
+                    transition: border-color 0.3s, text-shadow 0.3s, box-shadow 0.3s;
+}
+
+/*
+    Navigation bar
+*/
+#NavBar {
+    display: block;
+    overflow: hidden;
+    border: none;
+
+    height: 100px;
+}
+
+#NavDesktop{display: none;}
+#NavMobile{display: block;}
+
+.logo{
+    height: 70px;
+    margin: 0px 40px 0px 40px;
+}
+
+.menu_icon{
+    width: 40px;
+    margin: 5px 10px 0px 10px;
+}
+
+/* .navbar class */
+.navbar ul{list-style-type: none; margin: 0; padding: 0;}
+
+.navbar li{
+    display: inline;
+	float: left;
+    padding: 20px 10px 10px 10px;
+}
+
+/*
+    Mobile navigation menu page
+*/
+.menu_border{
+    position: absolute;
+
+    border: 5px solid var(--white);
+    border-radius: 30px;
+    
+    height: 500px;
+    width: 250px;
+    padding: 10px 60px 15px 60px;
+
+    box-shadow: 0px 0px 5px var(--white);
+}
+
+/* Mobile menu */
+.subline_menu{
+    width: 300px;
+    border: 5px solid var(--yellow);
+    border-width: 0px 0px 3px 0px;
+    color: var(--yellow);
+    box-shadow: 0px 0px 3px var(--yellow);
+}
+
+.menulink ul{
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+.menulink li{
+    display: inline;
+	float: left;
+    padding: 20px 10px 10px 10px;
+}
+
+.menulink a{
+        color: var(--yellow);
+        font-weight: bold;
+        font-size: 2em;
+        text-decoration: none;
+        text-shadow: 0px 0px 5px var(--yellow);
+    
+        transition: color 0.3s, text-shadow 0.3s;
+    }
+
+.menulink a:hover{
+        color: var(--blue);
+        text-shadow: 0px 0px 5px var(--blue);
+    
+        transition: color 0.3s, text-shadow 0.3s;
+}
+
+/* ------- • ✦ • ------- */
+
+/*
+    Main page
+*/
+#mainPageEN{overflow: hidden;} #mainPageDA{overflow: hidden;}
+
+.main_page{
+    height: max-content;
+    width: max-content;
+    overflow: hidden;
+}
+
+.main_card_info{
+    width: 100%;
+    height: auto;
+}
+
+/* Content */
+.main_logo{
+    width: 120px;
+    height: auto;
+}
+
+.layer1{
+    width: 85%;
+
+    position: absolute;
+    top: 300px;
+    margin-left: 20px;
+    z-index: 2;
+}
+.layer1 h1{font-size: 1.5em;}
+
+/* Main page background */
+#mainBGdesktop{display: none;}
+#mainBGmobile{display: block;}
+
+.main_card{
+    width: 100%;
+    height: auto;
+    position: absolute;
+    z-index: 1;
+}
+
+.bg_image{
+    width: 100%;
+    height: auto;
+    position: absolute;
+    z-index: -1;
+}
+
+/* ------- • ✦ • ------- */
+
+/*
+    Language Switch
+*/
+
+.lang_popup{
+    position: absolute;
+    width: 200px;
+    z-index: 3;
+    right: 50px;
+}
+.lang_popup_none{display: none;}
+
+.lang_popup img{
+    display: inline;
+    width: 40px;
+    border-radius: 30px;
+    margin-right: 5px;
+}
+
+.lang_popup p{
+    display: inline;
+    font-size: 1.5em;
+}
+
+.lang_en{
+    display: block;
+    color: var(--black);
+    background-color: var(--white);
+    border-radius: 10px 10px 0px 0px;
+
+    height: 50px;
+    width: 180px;
+    padding: 10px 30px 10px 20px;
+    
+    transition: background-color 0.3s;
+}
+.lang_en:hover{background-color: var(--hover); transition: background-color 0.3s;}
+
+.lang_da{
+    display: block;
+    color: var(--black);
+    background-color: var(--white);
+    border-radius: 0px 0px 10px 10px;
+    
+    height: 50px;
+    width: 180px;
+    padding: 10px 30px 10px 20px;
+
+    transition: background-color 0.3s;
+}
+.lang_da:hover{background-color: var(--hover); transition: background-color 0.3s;}
+
+/* ------- • ✦ • ------- */
+
+/* 
+    Explore subpage
+*/
+
+/* Containers */
+.explore_container{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+
+    align-items: center;
+    justify-content: center;
+
+    margin: auto;
+    width: 95%;
+    padding-bottom: 30px;
+}
+
+.explore_cards_margins{
+    display: inline-block;
+    width: 300px;
+    height: 520px;
+    margin: 0px 50px 30px 50px;
+    flex-basis: auto;
+}
+
+/* Media Formatting */
+.explore_card p{
+    font-size: 0.8em;
+    text-align: center;
+}
+
+.explore_card img{
+    height: 161px;
+    width: 340px;
+
+    margin-top: 20px;
+    margin-left: -90px;
+    margin-right: -90px;
+}
+
+/* Subpage Cards */
+.explore_card{
+    position: absolute;
+    left: 15px;
+
+    background-color: var(--white);
+    border-radius: 30px;
+
+    height: 750px;
+    width: 600px;
+    padding: 5px 20px 50px 20px;
+
+    text-align: center;
+}
+.explore_card.hotelroyal{color: var(--hrblack); background-color: var(--hrwhite);}
+.explore_card.undermasken{color: var(--umblack); background-color: var(--umwhite);}
+.explore_card.seagullkiss{color: var(--skblack); background-color: var(--skwhite);}
+
+/* Subpage Cards Border */
+.explore_border{
+    position: absolute;
+
+    border: 5px solid var(--white);
+    border-radius: 30px;
+    
+    height: 500px;
+    width: 250px;
+    padding: 10px 60px 15px 60px;
+
+    box-shadow: 0px 0px 5px var(--white);
+}
+.explore_border.hotelroyal{border: 5px solid var(--hrblue);box-shadow: 0px 0px 5px var(--hrblue);}
+.explore_border.undermasken{border: 5px solid var(--umyellow);box-shadow: 0px 0px 5px var(--umyellow);}
+.explore_border.seagullkiss{border: 5px solid var(--skblue);box-shadow: 0px 0px 5px var(--skblue);}
+
+/* Button to subpage */
+.explore_card button{
+    background-color: var(--black);
+    color: var(--white);
+
+    height: 50px;
+    width: 150px;
+    border-radius: 30px;
+    border: 0;
+    text-transform: uppercase;
+
+    transition: background-color 0.5s, color 0.5s;
+}
+.explore_card.hotelroyal button{background-color: var(--hrblue); color: var(--hrwhite);}
+.explore_card.undermasken button{background-color: var(--umyellow); color: var(--umblue);}
+.explore_card.seagullkiss button{background-color: var(--skblack); color: var(--skblue);}
+
+/* Button to subpage - Hover */
+.explore_card button:hover{
+    background-color: var(--blue);
+    color: var(--white);
+    transition: background-color 0.5s, color 0.5s;
+}
+.explore_card.hotelroyal button:hover{background-color: var(--hrblack); color: var(--hrblue);}
+.explore_card.undermasken button:hover{background-color: var(--umblack); color: var(--umyellow);}
+.explore_card.seagullkiss button:hover{background-color: var(--skblue); color: var(--skwhite);}
+
+/* Card linking to suggestions page*/
+.explore_card_suggest{
+    position: absolute;
+    left: 15px;
+
+    background-color: var(--transparent);
+    border-radius: 30px;
+
+    height: 450px;
+    width: 300px;
+    padding: 5px 20px 50px 20px;
+
+    text-align: center;
+}
+
+.explore_border_suggest{
+    position: absolute;
+
+    border: 5px solid var(--yellow);
+    border-radius: 30px;
+    
+    height: 500px;
+    width: 250px;
+    padding: 10px 60px 15px 60px;
+
+    box-shadow: 0px 0px 5px var(--yellow);
+}
+
+.explore_card_suggest h1{
+    font-size: 1.5em;
+    margin-top: 80px;
+}
+
+.explore_card_suggest p{
+    color: var(--white);
+    font-size: 1.8em;
+    text-align: center;
+    margin-top: 20px;
+}
+
+/* ------- • ✦ • ------- */
+
+/*
+    Events subpage
+*/
+
+.events_holder{
+    margin: auto;
+    width: 80%;
+
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.event{
+    margin: 10px 0px 10px 0px;
+}
+
+/* Event Cards */
+
+.events_card{
+    position: relative;
+    left: -40px;
+    
+    background-color: var(--white);
+    border-radius: 30px;
+
+    height: 200px;
+    width: 1000px;
+
+    padding: 40px 40px 40px 40px;
+    margin: -30px 0px 0px 0px;
+}
+
+.events_border{
+    position: relative;
+    left: 20px;
+    
+    border: 5px solid var(--yellow);
+    border-radius: 30px;
+    
+    height: 220px;
+    width: 1000px;
+    padding: 50px 60px 50px 60px;
+
+    box-shadow: 0px 0px 5px var(--yellow);
+}
+
+/* Event Card Content*/
+.events_text{
+    display: inline-block;
+    width: 600px;
+    padding-left: 20px;
+    margin-top: -40px;
+}
+
+.events_card h2{
+    color: var(--black);
+    font-size: 1em;
+    font-family: "Josefin Sans";
+    font-style: normal;
+    width: 500px;
+}
+
+.events_subline{
+    border: 3px solid var(--black);
+    border-width: 0px 0px 3px 0px;
+    width: 450px;
+}
+
+.events_card p{
+    color: var(--black);
+    font-size: 0.8em;
+    width: 600px;
+    padding-left: 20px;
+}
+
+/* Image */
+.events_card img{
+    float: left;
+
+    height: 250px;
+    width: 250px;
+    margin-top: -25px;
+
+    border-radius: 20px;
+}
+
+/* Date and address */
+.event_date_address{
+    text-align: right;
+    float: right;
+}
+
+/* ------- • ✦ • ------- */
+
+/*
+    About Us subpage
+*/
+
+.about_paragraph{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+
+    align-items: center;
+    justify-content: center;
+
+    margin: auto;
+    width: 50%;
+}
+
+.about_paragraph img{
+    display: block;
+    width: 200px;
+    float: left;
+}
+
+.secondimage{
+    display: block;
+    width: 400px;
+    float: left;
+    padding-right: 50px;
+}
+
+.about_paragraph p{
+    display: block;
+    font-size: 1em;
+    width: 400px;
+    margin: auto;
+    margin-top: 20px;
+}
+
+.about_paragraph h1{
+    display: block;
+    font-size: 1.5em;
+    width: 300px;
+    text-align: center;
+}
+
+/* Linking to suggest page*/
+.about_to_suggest{
+    display: block;
+    margin: auto;
+    width: 60%;
+    
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+
+    padding-bottom: 70px;
+}
+
+.about_to_suggest p{
+    display: block;
+    width: 300px;
+    text-align: center;
+    margin: auto;
+   
+}
+
+/* ------- • ✦ • ------- */
+
+/*
+    Suggest subpage
+*/
+
+.form_holder{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+
+    align-items: center;
+    justify-content: center;
+
+    margin: auto;
+    width: 75%;
+    padding-bottom: 30px;
+}
+
+.form_holder button{
+    margin: 10px 0px 10px 0px;
+}
+
+input{
+    display: flex;
+    flex-direction: column;
+
+    color: var(--hover);
+    background-color: var(--white);
+    
+    font-style: italic;
+    font-size: 1em;
+
+    height: 60px;
+    width: 400px;
+    padding: 5px 10px 5px 10px;
+    margin: -10px 20px 0px 20px;
+
+    border-radius: 20px;
+    border: 5px solid var(--transparent);
+    outline: none;
+
+    transition: color 0.3s, border 0.3s, font-style 0.3s, box-shadow 0.3s;
+}
+input:focus{color: var(--black); font-style: normal; border: 5px solid var(--yellow); box-shadow: 0px 0px 5px var(--yellow);
+            transition: color 0.3s, border 0.3s, font-style 0.3s, box-shadow 0.3s;}
+
+.inputBig textarea{
+    height: 260px;
+    width: 400px;
+    resize: none;
+
+    padding: 5px 10px 5px 10px;
+    margin: 0px 20px 5px 20px;
+
+
+    text-align: left;
+    font-family:  "Josefin Sans", sans-serif;
+    color: var(--hover);
+    background-color: var(--white);
+    
+    font-style: italic;
+    font-weight: bold;
+    font-size: 1em;
+
+    border-radius: 20px;
+    border: 5px solid var(--transparent);
+    outline: none;
+
+    transition: color 0.3s, border 0.3s, font-style 0.3s, box-shadow 0.3s;
+}
+textarea:focus{color: var(--black); font-style: normal; border: 5px solid var(--yellow); box-shadow: 0px 0px 5px var(--yellow);
+    transition: color 0.3s, border 0.3s, font-style 0.3s, box-shadow 0.3s;}
+
+/*
+    Confirmation or Error after Suggestion Submittion
+*/
+.container_postsuggest{
+    width: 68%;
+    margin: auto;
+    padding-top: 19px;
+}
+.container_postsuggest.error{
+    width: 71%;
+    margin: auto;
+    padding-top: 19px;
+}
+
+.text_postsuggest{
+    height: 450px;
+    padding-top: 70px;
+}
+
+.text_postsuggest p{
+    font-size: 2em;
+    width: 500px;
+}
+.text_postsuggest.error p{
+    font-size: 2em;
+    width: 600px;
+}
+
+/* ------- • ✦ • ------- */
+
+/*
+    404 page
+*/
+#page404{overflow: hidden;}
+
+.container_404{
+    width: 80%;
+    margin: auto;
+    padding-top: 70px;
+}
+
+.image404{
+    display: block;
+    height: 300px;
+    width: auto;
+}
+
+.text_404{
+    display: block;
+    height: 450px;
+}
+
+.text_404 p{
+    font-size: 1em;
+    text-align: center;
+    width: 300px;
+}
+
+.text_404 h1{
+    font-size: 2em;
+    text-align: center;
+    width: 300px;
+    margin-bottom: 20px;
+}
+
+.text_404 button{
+    display: block;
+    text-align: center;
+    margin: auto;
+
+    font-size: 0.8em;
+    width: 200px;
+    padding: 10px;
+}
+
+/*
+    Empty state
+*/
+#pageEmptystate{overflow: hidden;}
+
+.container_emptystate{
+    width: 80%;
+    margin: auto;
+    margin-left: 0;
+    margin-right: 0;
+    padding-top: 70px;
+}
+
+.image_emptystate{
+    display: block;
+    height: 250px;
+    width: auto;
+    margin: auto;
+}
+
+.text_emptystate{
+    display: block;
+    height: 450px;
+}
+
+.text_emptystate p{
+    font-size: 1em;
+    text-align: center;
+    width: 300px;
+}
+
+.text_emptystate h1{
+    font-size: 2em;
+    text-align: center;
+    width: 300px;
+    margin: auto;
+    margin-bottom: 10px;
+}
+
+.text_emptystate button{
+    display: block;
+    text-align: center;
+    margin: auto;
+
+    font-size: 0.8em;
+    width: 200px;
+    padding: 10px;
+}
+
+/* ------- • ✦ • ------- */
+
+/*
+
+    ✦ S u b p a g e s ✦
+
+*/
+
+/*
+    Subpage 1 - Hotel Royal
+*/
+
+/* Subpage background color */ #subpage1HR{background-color: var(--hrblack);}
+/* Navigation bar background color*/ #subpage1HRnav{background-color: var(--hrblack);}
+/* Navigation bar basics*/ #NavBarHR {display: block;overflow: hidden;border: none;}
+
+/* Selection colors */ #subpage1HR::selection {color: var(--hrblack); background: var(--hryellow);}
+
+/* Scrollbar track */ #subpage1HR::-webkit-scrollbar {width: 20px; background-color: var(--hrblack);}
+/* Scrollbar thumb */#subpage1HR::-webkit-scrollbar-thumb {background-color: var(--hryellow); border-radius: 50px;}
+
+/* Navigation bar links */ .HRnavbar a{color: var(--hrwhite); text-shadow: 0px 0px 0px; text-decoration: none; transition: color 0.3s, text-shadow 0.3s;}
+/* Navigation bar links - Hover */ .HRnavbar a:hover{color: var(--hryellow); text-shadow: 0px 0px 5px var(--hryellow); transition: color 0.3s, text-shadow 0.3s;}
+
+/* Page content */
+.hotelroyal_cover{
+    background-image: url('/Content/Subpages/Hotel_Royal/Modified/hotel_royal_subpage_cover_blur.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+
+    max-width: 100%;
+    height: 200px;
+    padding-top: 50px;
+}
+
+/* Cover headline */
+.hotelroyalsubpage h1{
+    font-family: "Dubiel", serif;
+    font-size: 2em;
+    text-transform: uppercase;
+    color: var(--hryellow);
+    text-shadow: 0px 0px 0px;
+    margin-bottom: -10px;
+}
+
+/* Line under cover headline */
+.rh_cover_subline{
+    border: 3px solid var(--hryellow);
+    border-width: 0px 0px 3px 0px;
+    width: 900px;
+}
+
+/* Sections headline */
+.hotelroyalsubpage h2{
+    font-family: "Dubiel", serif;
+    font-size: 1.5em;
+    text-transform: uppercase;
+    color: var(--hryellow);
+    margin-bottom: -10px;
+}
+
+/* Line under normal headlines */
+.rh_subline{
+    border: 3px solid var(--hryellow);
+    border-width: 0px 0px 3px 0px;
+    width: 300px;
+}
+
+/* Basic text */
+.hotelroyalsubpage p{
+    color: var(--hrwhite);
+}
+
+.hrsubpage_paragraph{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+
+    align-items: center;
+    justify-content: center;
+
+    margin: auto;
+    width: 100%;
+
+    padding-top: 30px;
+    padding-bottom: 30px;
+}
+
+.hrsubpage_paragraph img{
+    width: 250px;
+    float: right;
+    padding: 10px 10px 10px 10px;
+
+    border: 5px solid var(--hryellow);
+    border-radius: 30px;
+}
+
+.hrsubpage_map{
+    float: left;
+    padding: 10px 10px 10px 10px;
+    margin-right: 30px;
+
+    border: 5px solid var(--hryellow);
+    border-radius: 30px;
+}
+
+.hrsubpage_paragraph p{width: 500px; margin: 20px;}
+.hrsubpage_paragraph h1{width: 300px;}
+
+#HRtextP4 p{width: 400px; margin: 10px;}
+
+/* Gallery */
+.hrsubpage_gallery{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+
+    align-items: center;
+    justify-content: center;
+
+    margin: auto;
+    width: 100%;
+
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+#HRheadlineGallery{
+    width: 90%;
+}
+
+.hrsubpage_gallery img{
+    width: 300px;
+    padding: 10px 10px 10px 10px;
+    margin: 10px 10px 10px 10px;
+
+    border: 5px solid var(--hryellow);
+    border-radius: 30px;
+
+    filter: brightness(1);
+    transition: filter 0.3s;
+}
+.hrsubpage_gallery img:hover{filter: brightness(0.4); transition: filter 0.3s;}
+
+/* ------- • ✦ • ------- */
+
+/*
+    Subpage 2 - UnderMasken
+*/
+
+/* Subpage background color */ #subpage2UM{background-color: var(--umblack);}
+/* Navigation bar background color*/ #subpage2UMnav{background-color: var(--umblack);}
+/* Navigation bar basics*/ #NavBarUM {display: block; overflow: hidden; border: none;}
+
+/* Selection colors */ #subpage2UM::selection {color: var(--umblack); background: var(--umyellow);}
+
+/* Scrollbar track */ #subpage2UM::-webkit-scrollbar {width: 20px; background-color: var(--umblack);}
+/* Scrollbar thumb */#subpage2UM::-webkit-scrollbar-thumb {background-color: var(--umyellow); border-radius: 50px;}
+
+/* Navigation bar links */ .umnavbar a{color: var(--umwhite); text-shadow: 0px 0px 0px; text-decoration: none; transition: color 0.3s, text-shadow 0.3s;}
+/* Navigation bar links - Hover */ .umavbar a:hover{color: var(--umyellow); text-shadow: 0px 0px 5px var(--umyellow); transition: color 0.3s, text-shadow 0.3s;}
+
+/* Page content */
+.undermasken_cover{
+    background-image: url('/Content/Subpages/UnderMasken/Modified/undermasken_subpage_cover_blur.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+
+    max-width: 100%;
+    height: 200px;
+    padding-top: 50px;
+}
+
+/* Cover headline */
+.undermaskensubpage h1{
+    font-family: "Dubiel", serif;
+    font-size: 2em;
+    text-transform: uppercase;
+    color: var(--umyellow);
+    text-shadow: 0px 0px 0px;
+    margin-bottom: -10px;
+}
+
+/* Line under cover headline */
+.um_cover_subline{
+    border: 3px solid var(--umyellow);
+    border-width: 0px 0px 3px 0px;
+    width: 900px;
+}
+
+/* Sections headline */
+.undermaskensubpage h2{
+    font-family: "Dubiel", serif;
+    font-size: 1.5em;
+    text-transform: uppercase;
+    color: var(--umyellow);
+    margin-bottom: -10px;
+}
+
+/* Line under normal headlines */
+.um_subline{
+    border: 3px solid var(--umyellow);
+    border-width: 0px 0px 3px 0px;
+    width: 300px;
+}
+
+/* Basic text */
+.undermaskensubpage p{
+    color: var(--umwhite);
+}
+
+.umsubpage_paragraph{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+
+    align-items: center;
+    justify-content: center;
+
+    margin: auto;
+    width: 100%;
+
+    padding-top: 30px;
+    padding-bottom: 30px;
+}
+
+.umsubpage_paragraph img{
+    width: 250px;
+    float: right;
+    padding: 10px 10px 10px 10px;
+
+    border: 5px solid var(--umyellow);
+    border-radius: 30px;
+}
+
+.umsubpage_map{
+    float: left;
+    padding: 10px 10px 10px 10px;
+    margin-right: 30px;
+
+    border: 5px solid var(--umyellow);
+    border-radius: 30px;
+}
+
+.umsubpage_paragraph p{width: 500px; margin: 20px;}
+.umsubpage_paragraph h1{width: 300px;}
+
+#UMtextP4 p{width: 400px; margin: 10px;}
+
+/* Gallery */
+.umsubpage_gallery{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+
+    align-items: center;
+    justify-content: center;
+
+    margin: auto;
+    width: 100%;
+
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+#UMheadlineGallery{
+    width: 90%;
+}
+
+.umsubpage_gallery img{
+    width: 300px;
+    padding: 10px 10px 10px 10px;
+    margin: 10px 10px 10px 10px;
+
+    border: 5px solid var(--umyellow);
+    border-radius: 30px;
+
+    filter: brightness(1);
+    transition: filter 0.3s;
+}
+.umsubpage_gallery img:hover{filter: brightness(0.4); transition: filter 0.3s;}
+
+/* ------- • ✦ • ------- */
+
+/*
+    Subpage 3 - Seagull Kiss
+*/
+
+/* Subpage background color */ #subpage3SK{background-color: var(--skblue);}
+/* Navigation bar background color*/ #subpage3SKnav{background-color: var(--skblack);}
+/* Navigation bar basics*/ #NavBarSK {display: block; overflow: hidden; border: none;}
+
+/* Selection colors */ #subpage3SK::selection {color: var(--skblack); background: var(--skyellow);}
+
+/* Scrollbar track */ #subpage3SK::-webkit-scrollbar {width: 20px; background-color: var(--skblue);}
+/* Scrollbar thskb */#subpage3SK::-webkit-scrollbar-thumb {background-color: var(--skblack); border-radius: 50px;}
+
+/* Navigation bar links */ .sknavbar a{color: var(--skblue); text-shadow: 0px 0px 0px; text-decoration: none; transition: color 0.3s, text-shadow 0.3s;}
+/* Navigation bar links - Hover */ .skavbar a:hover{color: var(--skyellow); text-shadow: 0px 0px 5px var(--skyellow); transition: color 0.3s, text-shadow 0.3s;}
+
+/* Page content */
+.seagullkiss_cover{
+    background-image: url('/Content/Subpages/Seagull_Kiss/Modified/seagull_kiss_subpagecover_blur.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+
+    max-width: 100%;
+    height: 200px;
+    padding-top: 50px;
+}
+
+/* Cover headline */
+.seagullkisssubpage h1{
+    font-family: "Dubiel", serif;
+    font-size: 2em;
+    text-transform: uppercase;
+    color: var(--skblack);
+    text-shadow: 0px 0px 0px;
+    margin-bottom: -10px;
+}
+
+/* Line under cover headline */
+.sk_cover_subline{
+    border: 3px solid var(--skblack);
+    border-width: 0px 0px 3px 0px;
+    width: 200px;
+}
+
+/* Sections headline */
+.seagullkisssubpage h2{
+    font-family: "Dubiel", serif;
+    font-size: 1em;
+    text-transform: uppercase;
+    color: var(--skblack);
+    margin-bottom: -10px;
+}
+
+/* Line under normal headlines */
+.sk_subline{
+    border: 3px solid var(--skblack);
+    border-width: 0px 0px 3px 0px;
+    width: 200px;
+}
+
+/* Basic text */
+.seagullkisssubpage p{
+    color: var(--skblack);
+}
+
+.sksubpage_paragraph{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+
+    align-items: center;
+    justify-content: center;
+
+    margin: auto;
+    width: 100%;
+
+    padding-top: 30px;
+    padding-bottom: 30px;
+}
+
+.sksubpage_paragraph img{
+    display: block;
+    width: 200px;
+    padding: 10px 10px 10px 10px;
+
+    border: 5px solid var(--skblack);
+    border-radius: 30px;
+}
+
+.sksubpage_map{
+    float: left;
+    padding: 10px 10px 10px 10px;
+    margin-right: 30px;
+
+    border: 5px solid var(--skblack);
+    border-radius: 30px;
+}
+
+.sksubpage_paragraph p{width: 500px; margin: 20px;}
+.sksubpage_paragraph h1{width: 300px;}
+
+#SKtextP4 p{width: 400px; margin: 10px;}
+
+/* Gallery */
+.sksubpage_gallery{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+
+    align-items: center;
+    justify-content: center;
+
+    margin: auto;
+    width: 100%;
+
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+#SKheadlineGallery{
+    width: 90%;
+}
+
+.sksubpage_gallery img{
+    width: 100px;
+    padding: 5px;
+    margin: 5px;
+
+    border: 5px solid var(--skblack);
+    border-radius: 10px;
+
+    filter: brightness(1);
+    transition: filter 0.3s;
+}
+.sksubpage_gallery img:hover{filter: brightness(0.4); transition: filter 0.3s;}
+
+}
+/* ------- • ✦ • ------- */
