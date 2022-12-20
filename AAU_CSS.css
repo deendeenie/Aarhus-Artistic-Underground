@@ -866,7 +866,7 @@ textarea:focus{color: var(--black); font-style: normal; border: 5px solid var(--
 
 /* Header */
 .hotelroyal_cover{
-    background-image: url('/Content/Subpages/Hotel_Royal/Modified/hotel_royal_subpage_cover_blur.png');
+    background-image: url('Content/Subpages/Hotel_Royal/Modified/hotel_royal_subpage_cover_blur.png');
     background-size: cover;
     background-repeat: no-repeat;
 
@@ -1018,7 +1018,7 @@ textarea:focus{color: var(--black); font-style: normal; border: 5px solid var(--
 
 /* Header */
 .undermasken_cover{
-    background-image: url('/Content/Subpages/UnderMasken/Modified/undermasken_subpage_cover_blur.png');
+    background-image: url('Content/Subpages/UnderMasken/Modified/undermasken_subpage_cover_blur.png');
     background-size: cover;
     background-repeat: no-repeat;
 
@@ -1170,7 +1170,7 @@ textarea:focus{color: var(--black); font-style: normal; border: 5px solid var(--
 
 /* Header */
 .seagullkiss_cover{
-    background-image: url('/Content/Subpages/Seagull_Kiss/Modified/seagull_kiss_subpagecover_blur.png');
+    background-image: url('Content/Subpages/Seagull_Kiss/Modified/seagull_kiss_subpagecover_blur.png');
     background-size: cover;
     background-repeat: no-repeat;
 
@@ -2083,7 +2083,7 @@ textarea:focus{color: var(--black); font-style: normal; border: 5px solid var(--
 
 /* Page content */
 .hotelroyal_cover{
-    background-image: url('/Content/Subpages/Hotel_Royal/Modified/hotel_royal_subpage_cover_blur.png');
+    background-image: url('Content/Subpages/Hotel_Royal/Modified/hotel_royal_subpage_cover_blur.png');
     background-size: cover;
     background-repeat: no-repeat;
 
@@ -2220,7 +2220,7 @@ textarea:focus{color: var(--black); font-style: normal; border: 5px solid var(--
 
 /* Page content */
 .undermasken_cover{
-    background-image: url('/Content/Subpages/UnderMasken/Modified/undermasken_subpage_cover_blur.png');
+    background-image: url('Content/Subpages/UnderMasken/Modified/undermasken_subpage_cover_blur.png');
     background-size: cover;
     background-repeat: no-repeat;
 
@@ -2357,7 +2357,7 @@ textarea:focus{color: var(--black); font-style: normal; border: 5px solid var(--
 
 /* Page content */
 .seagullkiss_cover{
-    background-image: url('/Content/Subpages/Seagull_Kiss/Modified/seagull_kiss_subpagecover_blur.png');
+    background-image: url('Content/Subpages/Seagull_Kiss/Modified/seagull_kiss_subpagecover_blur.png');
     background-size: cover;
     background-repeat: no-repeat;
 
