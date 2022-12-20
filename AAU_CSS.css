@@ -166,14 +166,12 @@ body{margin: 0; top: 0; left: 0; background-color: var(--black);
 /*
     Navigation bar
 */
-#NavBar {
-    display: block;
-    overflow: hidden;
-    border: none;
-}
+#NavBar {display: block; overflow: hidden; border: none;}
+#NavBarEN {display: block; overflow: hidden; border: none;}
+#NavBarDA {display: block; overflow: hidden; border: none;}
 
-#NavDesktop{display: block;}
-#NavMobile{display: none;}
+#NavDesktop{display: block;} #NavDesktopDA{display: block;}
+#NavMobile{display: none;} #NavMobileDA{display: none;}
 
 .logo{
     height: 50px;
@@ -252,8 +250,28 @@ body{margin: 0; top: 0; left: 0; background-color: var(--black);
 .layer1{
     position: absolute;
     top: 150px;
-    right: 100px;
+    right: 120px;
     z-index: 2;
+}
+
+/* Decor at the bottom of the page */
+.page_decor_main img{
+    width: 150px;
+    height: auto;
+}
+
+#mainPageDecorLeft{
+    position: absolute;
+    bottom: -10px;
+    z-index: 4;
+    left: 0px;
+}
+
+#mainPageDecorRight{
+    position: absolute;
+    bottom: -10px;
+    z-index: 5;
+    right: 0px;
 }
 
 /* Main page background */
@@ -295,6 +313,12 @@ body{margin: 0; top: 0; left: 0; background-color: var(--black);
 .lang_popup p{
     display: inline;
     font-size: 1.5em;
+}
+
+.lang_popup a{
+    color: var(--black);
+    font-weight: normal;
+    text-shadow: 0px 0px 0px;
 }
 
 .lang_en{
@@ -722,6 +746,13 @@ textarea:focus{color: var(--black); font-style: normal; border: 5px solid var(--
     padding-top: 19px;
 }
 
+.container_postsuggest img{
+    float: right;
+    height: 450px;
+    width: auto;
+    padding-left: 50px;
+}
+
 .text_postsuggest{
     height: 450px;
     padding-top: 70px;
@@ -819,6 +850,21 @@ textarea:focus{color: var(--black); font-style: normal; border: 5px solid var(--
 /* Navigation bar links - Hover */ .HRnavbar a:hover{color: var(--hryellow); text-shadow: 0px 0px 5px var(--hryellow); transition: color 0.3s, text-shadow 0.3s;}
 
 /* Page content */
+
+/* Interactive element */
+.hr_interactive img{
+    width: 200px;
+    height: auto;
+
+    position:fixed;
+    bottom: 0px;
+    right: 0px;
+    z-index: 2;
+}
+#turntableAfterPlay{display: none;}
+#HRstopMusic{width: 200px; height: 200px;}
+
+/* Header */
 .hotelroyal_cover{
     background-image: url('/Content/Subpages/Hotel_Royal/Modified/hotel_royal_subpage_cover_blur.png');
     background-size: cover;
@@ -956,6 +1002,21 @@ textarea:focus{color: var(--black); font-style: normal; border: 5px solid var(--
 /* Navigation bar links - Hover */ .umavbar a:hover{color: var(--umyellow); text-shadow: 0px 0px 5px var(--umyellow); transition: color 0.3s, text-shadow 0.3s;}
 
 /* Page content */
+
+/* Interactive element */
+.um_interactive img{
+    width: 200px;
+    height: auto;
+
+    position:fixed;
+    top: 80px;
+    left: 0px;
+    z-index: 2;
+}
+#afterClickMask{display: none;}
+#stopSound{width: 200px; height: 200px;}
+
+/* Header */
 .undermasken_cover{
     background-image: url('/Content/Subpages/UnderMasken/Modified/undermasken_subpage_cover_blur.png');
     background-size: cover;
@@ -1093,6 +1154,21 @@ textarea:focus{color: var(--black); font-style: normal; border: 5px solid var(--
 /* Navigation bar links - Hover */ .skavbar a:hover{color: var(--skyellow); text-shadow: 0px 0px 5px var(--skyellow); transition: color 0.3s, text-shadow 0.3s;}
 
 /* Page content */
+
+/* Interactive element */
+.sk_interactive img{
+    width: 200px;
+    height: auto;
+
+    position:fixed;
+    bottom: 0px;
+    left: 0px;
+    z-index: 2;
+}
+#seagullNoisy{display: none;}
+#stopSeagullSound{width: 200px; height: 200px;}
+
+/* Header */
 .seagullkiss_cover{
     background-image: url('/Content/Subpages/Seagull_Kiss/Modified/seagull_kiss_subpagecover_blur.png');
     background-size: cover;
@@ -1244,16 +1320,11 @@ h2{font-size: 0.8em;}
 /*
     Navigation bar
 */
-#NavBar {
-    display: block;
-    overflow: hidden;
-    border: none;
+#NavBarEN {display: block; overflow: hidden; border: none; height: 100px;}
+#NavBar {display: block; overflow: hidden; border: none; height: 100px;}
 
-    height: 100px;
-}
-
-#NavDesktop{display: none;}
-#NavMobile{display: block;}
+#NavDesktop{display: none;} #NavDesktopDA{display: none;}
+#NavMobile{display: block;} #NavMobileDA{display: block;}
 
 .logo{
     height: 70px;
@@ -1362,6 +1433,9 @@ h2{font-size: 0.8em;}
 }
 .layer1 h1{font-size: 1.5em;}
 
+/* Decor at the bottom of the page */
+.page_decor_main img{display: none}
+
 /* Main page background */
 #mainBGdesktop{display: none;}
 #mainBGmobile{display: block;}
@@ -1439,7 +1513,6 @@ h2{font-size: 0.8em;}
 /* 
     Explore subpage
 */
-
 /* Containers */
 .explore_container{
     display: flex;
@@ -1456,25 +1529,32 @@ h2{font-size: 0.8em;}
 
 .explore_cards_margins{
     display: inline-block;
-    width: 300px;
+    width: 100%;
     height: 520px;
-    margin: 0px 50px 30px 50px;
+    margin: 0px 50px 600px 50px;
     flex-basis: auto;
 }
 
 /* Media Formatting */
+.explore_card h2{
+    display: block;
+    font-size: 3em;
+    text-align: center;
+}
+
 .explore_card p{
-    font-size: 0.8em;
+    display: block;
+    font-size: 2em;
     text-align: center;
 }
 
 .explore_card img{
-    height: 161px;
-    width: 340px;
+    display: block;
+    height: 300px;
+    width: 790px;
 
     margin-top: 20px;
-    margin-left: -90px;
-    margin-right: -90px;
+    margin-left: -20px;
 }
 
 /* Subpage Cards */
@@ -1485,8 +1565,8 @@ h2{font-size: 0.8em;}
     background-color: var(--white);
     border-radius: 30px;
 
-    height: 750px;
-    width: 600px;
+    height: 1000px;
+    width: 750px;
     padding: 5px 20px 50px 20px;
 
     text-align: center;
@@ -1502,8 +1582,8 @@ h2{font-size: 0.8em;}
     border: 5px solid var(--white);
     border-radius: 30px;
     
-    height: 500px;
-    width: 250px;
+    height: 1050px;
+    width: 700px;
     padding: 10px 60px 15px 60px;
 
     box-shadow: 0px 0px 5px var(--white);
@@ -1514,12 +1594,14 @@ h2{font-size: 0.8em;}
 
 /* Button to subpage */
 .explore_card button{
+    display: block;
     background-color: var(--black);
     color: var(--white);
+    font-size: 1.5em;
 
-    height: 50px;
-    width: 150px;
-    border-radius: 30px;
+    height: 100px;
+    width: 350px;
+    border-radius: 50px;
     border: 0;
     text-transform: uppercase;
 
@@ -1548,7 +1630,7 @@ h2{font-size: 0.8em;}
     border-radius: 30px;
 
     height: 450px;
-    width: 300px;
+    width: 750px;
     padding: 5px 20px 50px 20px;
 
     text-align: center;
@@ -1561,21 +1643,29 @@ h2{font-size: 0.8em;}
     border-radius: 30px;
     
     height: 500px;
-    width: 250px;
+    width: 700px;
     padding: 10px 60px 15px 60px;
 
     box-shadow: 0px 0px 5px var(--yellow);
 }
 
 .explore_card_suggest h1{
-    font-size: 1.5em;
+    display: block;
+    font-size: 3em;
     margin-top: 80px;
 }
 
 .explore_card_suggest p{
+    display: block;
     color: var(--white);
-    font-size: 1.8em;
+    font-size: 2em;
     text-align: center;
+    margin-top: 20px;
+}
+
+.explore_card_suggest button{
+    display: block;
+    font-size: 2em;
     margin-top: 20px;
 }
 
@@ -1773,10 +1863,10 @@ input{
     background-color: var(--white);
     
     font-style: italic;
-    font-size: 1em;
+    font-size: 0.8em;
 
     height: 60px;
-    width: 400px;
+    width: 280px;
     padding: 5px 10px 5px 10px;
     margin: -10px 20px 0px 20px;
 
@@ -1791,11 +1881,11 @@ input:focus{color: var(--black); font-style: normal; border: 5px solid var(--yel
 
 .inputBig textarea{
     height: 260px;
-    width: 400px;
+    width: 280px;
     resize: none;
 
     padding: 5px 10px 5px 10px;
-    margin: 0px 20px 5px 20px;
+    margin: 20px 20px 5px 20px;
 
 
     text-align: left;
@@ -1819,11 +1909,20 @@ textarea:focus{color: var(--black); font-style: normal; border: 5px solid var(--
 /*
     Confirmation or Error after Suggestion Submittion
 */
+#suggestConfirm{overflow: hidden;}
+
 .container_postsuggest{
     width: 68%;
     margin: auto;
     padding-top: 19px;
 }
+.container_postsuggest img{
+    display: block;
+    height: 200px;
+    width: auto;
+    margin: auto;
+}
+
 .container_postsuggest.error{
     width: 71%;
     margin: auto;
@@ -1831,17 +1930,35 @@ textarea:focus{color: var(--black); font-style: normal; border: 5px solid var(--
 }
 
 .text_postsuggest{
+    display: block;
     height: 450px;
-    padding-top: 70px;
+    margin-top: -40px;
+    margin-left: -10px;
+}
+
+.text_postsuggest h1{
+    display: block;
+    text-align: center;
+    font-size: 2em;
+    width: 270px;
 }
 
 .text_postsuggest p{
-    font-size: 2em;
-    width: 500px;
+    display: block;
+    text-align: center;
+    font-size: 1.5em;
+    padding-top: 5px;
+    width: 270px;
 }
+.text_postsuggest button{
+    margin-left: 10px;
+}
+
 .text_postsuggest.error p{
+    display: block;
+    text-align: center;
     font-size: 2em;
-    width: 600px;
+    width: 280px;
 }
 
 /* ------- • ✦ • ------- */

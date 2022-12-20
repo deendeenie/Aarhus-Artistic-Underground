@@ -31,8 +31,8 @@ Exam Project: Fall 2022 / Hidden places
 
 <!-- Navigation Bar -->
 <header>
-    <iframe id="NavBar"
-        src="AAU_Menu.html"
+    <iframe id="NavBarDA"
+        src="AAU_Menu_DA.html"
         height="70"
         width="100%"
         title="AAU Navigation bar"
@@ -42,13 +42,20 @@ Exam Project: Fall 2022 / Hidden places
 <!-- Navigation Bar END -->
 
 <!-- Language Switch -->
-    <div class="lang_popup lang_popup_none" id="switchPop">
-        <span class="lang_en"><img src="/Content/LangSwitch_EN.png" alt="EN"><p>English</p></span>
-        <span class="lang_da"><img src="/Content/LangSwitch_DA.png" alt="DA"><p>Dansk</p></span>
-    </div>
+<div class="lang_popup lang_popup_none" id="switchPopDA">
+    <a href="AAU_Index.html"><span class="lang_en"><img src="/Content/LangSwitch_EN.png" alt="EN"><p>English</p></span></a>
+    <span class="lang_da" id="switchDanish"><img src="/Content/LangSwitch_DA.png" alt="DA"><p>Dansk</p></span>
+</div>
 <!-- Language Switch END -->
 
 <!-- Content -->
+    <!-- Page decorations -->
+    <div class="page_decor_main">
+        <div id="mainPageDecorLeft"><img src="/Content/Illustrations/Main_Page_Ground_Left.png" alt="Dirt pile with grass"></div>
+        <div id="mainPageDecorRight"><img src="/Content/Illustrations/Main_Page_Ground_Right.png" alt="Dirt pile with grass and a flowers"></div>
+    </div>
+    
+    <!-- Page card -->
     <div class="layer1" align="center">
         <img src="Content/Logo/Logo - Light.png" class="main_logo" alt="logo">
         <h1>"Gravet op det skjulte"</h1>
@@ -63,9 +70,9 @@ Exam Project: Fall 2022 / Hidden places
         <img src="Content/Main_Card.png" class="main_card" alt="Main Page Card">
         <img src="Content/Main_Collage.png" class="bg_image" alt="Painting collage">
     </div>
-
+    
 <!-- Load JavaScript -->  
-    <script src="AAU_JS.js"></script>
+<script src="AAU_JS.js"></script>
 
 </body>
 </html>
