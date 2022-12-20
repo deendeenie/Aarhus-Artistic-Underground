@@ -17,35 +17,48 @@ console.log(skullie)
 
 // Language Switch Pop-up
 
-//English page
+window.onload = function() {
+//For the English page
     // Open it
-    window.onload = function() {
-        document.getElementById('NavBarEN').contentWindow.document.getElementById('switchLangEN').addEventListener('click', openSwitchPopUpEN);
+        // Constants
+        const langSwitchBtnEN = document.getElementById('NavBarEN').contentWindow.document.getElementById('switchLangEN')
+        const switchPopupEN = document.getElementById("switchPopEN")
+        const englishButton = document.getElementById('switchEnglish')
+
+        // On click function
+        langSwitchBtnEN.addEventListener('click', openSwitchPopUpEN);
+
         function openSwitchPopUpEN() {
-            document.getElementById("switchPopEN").style.display = 'block';
+            switchPopupEN.style.display = 'block';
         }
     
-    // Close it
-        document.getElementById('switchEnglish').addEventListener("click", closeSwitchPopUpEN);
+        // Close it
+        englishButton.addEventListener("click", closeSwitchPopUpEN);
+            
         function closeSwitchPopUpEN(){
-            document.getElementById("switchPopEN").style.display = 'none';
+            switchPopupEN.style.display = 'none';
         }
-    }
 
 //Danish page
-    // Open it
-    window.onload = function() {
-        document.getElementById('NavBarDA').contentWindow.document.getElementById('switchLangDA').addEventListener('click', openSwitchPopUpDA);
+        // Constants
+        const langSwitchBtnDA = document.getElementById('NavBarDA').contentWindow.document.getElementById('switchLangDA')
+        const switchPopupDA = document.getElementById("switchPopDA")
+        const danishButton = document.getElementById('switchDanish')
+
+        // On click function
+        langSwitchBtnDA.addEventListener('click', openSwitchPopUpDA);
+
         function openSwitchPopUpDA() {
-            document.getElementById("switchPopDA").style.display = 'block';
+            switchPopupDA.style.display = 'block';
         }
 
-    // Close it
-        document.getElementById('switchDanish').addEventListener("click", closeSwitchPopUpDA);
+        // Close it
+        danishButton.addEventListener("click", closeSwitchPopUpDA);
+            
         function closeSwitchPopUpDA(){
-            document.getElementById("switchPopDA").style.display = 'none';
+            switchPopupDA.style.display = 'none';
         }
-    }
+}
 
 //Hotel Royal Easter Egg - Turning on some music
     // Turn on sound
