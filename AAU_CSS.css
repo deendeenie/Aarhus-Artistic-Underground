@@ -604,6 +604,8 @@ body{margin: 0; top: 0; left: 0; background-color: var(--black);
 /*
     About Us subpage
 */
+#mobileAboutSkullie{display: none;}
+#desktopAboutSkullie{display: inline-block;}
 
 .about_paragraph{
     display: flex;
@@ -1770,6 +1772,8 @@ h2{font-size: 0.8em;}
 /*
     About Us subpage
 */
+#mobileAboutSkullie{display: block;}
+#desktopAboutSkullie{display: none;}
 
 .about_paragraph{
     display: flex;
@@ -1785,21 +1789,20 @@ h2{font-size: 0.8em;}
 
 .about_paragraph img{
     display: block;
+    margin: auto;
     width: 200px;
-    float: left;
 }
 
 .secondimage{
     display: block;
-    width: 400px;
-    float: left;
-    padding-right: 50px;
+    margin: auto;
+    padding-right: 0px;
 }
 
 .about_paragraph p{
     display: block;
     font-size: 1em;
-    width: 400px;
+    width: 300px;
     margin: auto;
     margin-top: 20px;
 }
@@ -1815,7 +1818,7 @@ h2{font-size: 0.8em;}
 .about_to_suggest{
     display: block;
     margin: auto;
-    width: 60%;
+    width: 300px;
     
     text-align: center;
     align-items: center;
@@ -1829,7 +1832,15 @@ h2{font-size: 0.8em;}
     width: 300px;
     text-align: center;
     margin: auto;
-   
+}
+
+.about_to_suggest h1{
+    font-size: 2em;
+    margin-bottom: 8px;
+}
+
+.about_to_suggest button{
+    margin-top: 20px;
 }
 
 /* ------- • ✦ • ------- */
