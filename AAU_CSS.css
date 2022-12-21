@@ -240,8 +240,6 @@ body{margin: 0; top: 0; left: 0; background-color: var(--black);
 }
 
 .menu_border{
-    
-
     border: 5px solid var(--yellow);
     border-radius: 30px;
     
@@ -1385,7 +1383,7 @@ h2{font-size: 0.8em;}
 
 .logo{
     height: 70px;
-    margin: 0px 40px 0px 40px;
+    margin: 0px 50px 0px 50px;
 }
 
 .menu_icon{
@@ -1402,10 +1400,10 @@ h2{font-size: 0.8em;}
     padding: 20px 10px 10px 10px;
 }
 
-
 /*
 
     Mobile navigation menu page
+
 */
 .menu_holder{
     display: block;
@@ -1423,8 +1421,6 @@ h2{font-size: 0.8em;}
 }
 
 .menu_border{
-    
-
     border: 5px solid var(--yellow);
     border-radius: 30px;
     
