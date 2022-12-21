@@ -17,9 +17,8 @@
 
 ### Responsiveness:
 + Desktop ✔
-+ Mobile (Samsung S10+) ✔
++ Mobile (Samsung S10+) / the code doesn't work in certain places
 + Tablet ❌
-+ Other mobiles ❌
 
 ### Code languages used:
 + HTML
