@@ -220,6 +220,61 @@ body{margin: 0; top: 0; left: 0; background-color: var(--black);
     margin-right: 20px;
 }
 
+/*
+
+    Mobile navigation menu page
+*/
+.menu_holder{
+    display: block;
+    margin-top: 50px;
+    margin: auto;
+    width: 40%;
+}
+
+.closing_x{
+    display: block;
+    width: 30px;
+    padding: 10px;
+    height: auto;
+    margin-left: 0;
+}
+
+.menu_border{
+    
+
+    border: 5px solid var(--yellow);
+    border-radius: 30px;
+    
+    height: 450px;
+    width: 250px;
+    padding: 50px 60px 50px 60px;
+
+    box-shadow: 0px 0px 5px var(--yellow);
+}
+
+.menu_border ul{
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+.menu_border a{
+    color: var(--white);
+    text-shadow: 0px 0px 0px;
+    text-transform: uppercase;
+}
+.menu_border a:hover{
+    color: var(--yellow);
+    text-shadow: 0px 0px 5px var(--yellow);
+}
+
+.menu_border hr{
+    border: 3px solid var(--yellow);
+    box-shadow: 0px 0px 5px var(--yellow);
+    border-width: 0px 0px 3px 0px;
+    width: 250px;
+    margin-bottom: 50px;
+}
 /* ------- • ✦ • ------- */
 
 /*
@@ -1347,20 +1402,61 @@ h2{font-size: 0.8em;}
     padding: 20px 10px 10px 10px;
 }
 
+
 /*
+
     Mobile navigation menu page
 */
-.menu_border{
-    position: absolute;
+.menu_holder{
+    display: block;
+    margin-top: 50px;
+    margin: auto;
+    width: 40%;
+}
 
-    border: 5px solid var(--white);
+.closing_x{
+    display: block;
+    width: 30px;
+    padding: 10px;
+    height: auto;
+    margin-left: 0;
+}
+
+.menu_border{
+    
+
+    border: 5px solid var(--yellow);
     border-radius: 30px;
     
-    height: 500px;
+    height: 450px;
     width: 250px;
-    padding: 10px 60px 15px 60px;
+    padding: 50px 60px 50px 60px;
 
-    box-shadow: 0px 0px 5px var(--white);
+    box-shadow: 0px 0px 5px var(--yellow);
+}
+
+.menu_border ul{
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+.menu_border a{
+    color: var(--white);
+    text-shadow: 0px 0px 0px;
+    text-transform: uppercase;
+}
+.menu_border a:hover{
+    color: var(--yellow);
+    text-shadow: 0px 0px 5px var(--yellow);
+}
+
+.menu_border hr{
+    border: 3px solid var(--yellow);
+    box-shadow: 0px 0px 5px var(--yellow);
+    border-width: 0px 0px 3px 0px;
+    width: 250px;
+    margin-bottom: 50px;
 }
 
 /* Mobile menu */
