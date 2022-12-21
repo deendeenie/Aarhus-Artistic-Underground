@@ -859,10 +859,10 @@ textarea:focus{color: var(--black); font-style: normal; border: 5px solid var(--
     position:fixed;
     bottom: 0px;
     right: 0px;
-    z-index: 2;
+    
 }
 #turntableAfterPlay{display: none;}
-#HRstopMusic{width: 200px; height: 200px;}
+#turntableStop{display: none; z-index: 3;}
 
 /* Header */
 .hotelroyal_cover{
@@ -1014,7 +1014,7 @@ textarea:focus{color: var(--black); font-style: normal; border: 5px solid var(--
     z-index: 2;
 }
 #afterClickMask{display: none;}
-#stopSound{width: 200px; height: 200px;}
+#maskStop{display: none; z-index: 3;}
 
 /* Header */
 .undermasken_cover{

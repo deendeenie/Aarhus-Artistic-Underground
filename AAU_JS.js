@@ -61,33 +61,52 @@ window.onload = function() {
 }
 
 //Hotel Royal Easter Egg - Turning on some music
+    // Constants
+    const turntableQuiet = document.getElementById("turntablePrePlay")
+    const turntableWithSound = document.getElementById("turntableAfterPlay")
+    const HRaudio = document.getElementById("turnTableAudio")
+    const clickForNoSound = document.getElementById("turntableStop")
+
     // Turn on sound
-    document.getElementById("turntablePrePlay").addEventListener("click", HRturnonAudio)
+    turntableQuiet.addEventListener("click", HRturnonAudio)
     function HRturnonAudio(){
-        document.getElementById("turntableAfterPlay").style.display = 'block';
-        document.getElementById("turnTableAudio").play();
+        turntableWithSound.style.display = 'block';
+        clickForNoSound.style.display = 'block';
+        HRaudio.play();
     }
 
     // Turn off
-    document.getElementById("HRstopMusic").addEventListener("click", HRturnoffAudio)
+    clickForNoSound.addEventListener("click", HRturnoffAudio)
     function HRturnoffAudio(){
-        document.getElementById("turntableAfterPlay").style.display = 'none';
-        document.getElementById("turnTableAudio").pause()
+        turntableWithSound.style.display = 'none';
+        clickForNoSound.style.display = 'none';
+        HRaudio.pause()
+        HRaudio.currentTime = 0;
     }
 
 //UnderMasken Easter Egg - The Summoning
+    // Constants
+    const preClickMask = document.getElementById("turntablePrePlay")
+    const maskWithSound = document.getElementById("afterClickMask")
+    const UMaudio = document.getElementById("maskAudio")
+    const maskStop = document.getElementById("turntableStop")
+
     // Turn on sound
-    document.getElementById("preClickMask").addEventListener("click", UMturnonAudio)
+    turntableQuiet.addEventListener("click", UMturnonAudio)
     function UMturnonAudio(){
-        document.getElementById("afterClickMask").style.display = 'block';
-        document.getElementById("maskAudio").play();
+        preClickMask.style.display = 'none';
+        maskWithSound.style.display = 'block';
+        maskStop.style.display = 'block';
+        UMaudio.play();
     }
 
     // Turn off
-    document.getElementById("stopSound").addEventListener("click", UMturnoffAudio)
+    maskStop.addEventListener("click", UMturnoffAudio)
     function UMturnoffAudio(){
-        document.getElementById("afterClickMask").style.display = 'none';
-        document.getElementById("maskAudio").pause()
+        maskWithSound.style.display = 'none';
+        maskStop.style.display = 'none';
+        UMaudio.pause()
+        UMaudio.currentTime = 0;
     }
 
 
