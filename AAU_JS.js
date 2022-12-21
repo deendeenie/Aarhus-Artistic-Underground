@@ -70,6 +70,7 @@ window.onload = function() {
     // Turn on sound
     turntableQuiet.addEventListener("click", HRturnonAudio)
     function HRturnonAudio(){
+        turntableQuiet.style.display = 'none';
         turntableWithSound.style.display = 'block';
         clickForNoSound.style.display = 'block';
         HRaudio.play();
@@ -78,6 +79,7 @@ window.onload = function() {
     // Turn off
     clickForNoSound.addEventListener("click", HRturnoffAudio)
     function HRturnoffAudio(){
+        turntableQuiet.style.display = 'block';
         turntableWithSound.style.display = 'none';
         clickForNoSound.style.display = 'none';
         HRaudio.pause()
@@ -107,23 +109,4 @@ window.onload = function() {
         maskStop.style.display = 'none';
         UMaudio.pause()
         UMaudio.currentTime = 0;
-    }
-
-
-//The Seagull Kiss Easter Egg - Noisy bird
-    // Turn on sound
-    document.getElementById("seagullQuiet").addEventListener("click", SKturnonAudio)
-    function  SKturnonAudio(){
-        document.getElementById("stopSeagullSound").style.display = 'block';
-        document.getElementById("seagullNoisy").style.display = 'block';
-        document.getElementById("seagullQuiet").style.display = 'none';
-        document.getElementById("seagullSound").play();
-    };
-
-    // Turn off
-    document.getElementById("stopSeagullSound").addEventListener("click", SKturnoffAudio)
-    function SKturnoffAudio(){
-        document.getElementById("seagullNoisy").style.display = 'none';
-        document.getElementById("seagullQuiet").style.display = 'block';
-        document.getElementById("seagullSound").pause()
     }
