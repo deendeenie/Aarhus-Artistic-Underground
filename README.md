@@ -2,7 +2,7 @@
 
 ### 💀 Aarhus Artist Underground 💀
 ------
-*Exam Project: Fall 2022 / Hidden places*
+*Hidden places Project - Exam Fall 2022*
 #### By Deen (Danuta-Dumitrita) Rotaru
 
 ------
