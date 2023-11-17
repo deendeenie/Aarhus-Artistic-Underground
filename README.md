@@ -1,28 +1,32 @@
 ------
 
-### Aarhus Artist Underground
+### 💀 Aarhus Artist Underground 💀
 ------
 *Exam Project: Fall 2022 / Hidden places*
-#### By Danuta-Dumitrita Rotaru
+#### By Deen (Danuta-Dumitrita) Rotaru
 
 ------
 
-### Tabs:
+### 🗃️ Tabs:
 + Main page / Welcome page
 + Explore
 + Events
 + About Us
 + Suggest
-+ (Mobile) Menu nav
++ (Mobile) Menu navigation
 
-### Responsiveness:
+------
+
+### 📱 Responsiveness:
 + Desktop ✔
 + Mobile (Samsung S10+) / the code doesn't work in certain places
 + Tablet ❌
 
-### Code languages used:
-+ HTML
-+ CSS
-+ JavaScript
+------
+
+### ⌨️ Code languages used:
++ HTML 📋
++ CSS 🎨
++ JavaScript 📁
 
 ------
